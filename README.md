@@ -1,7 +1,3 @@
-Certainly! Below is the updated and enhanced GitHub README-style documentation with a copyright notice at the start, including the mention of the software maker "Areeb Sayyed" in an eye-catching and bold style.
-
----
-
 # 🚀 FridayBot
 
 **FridayBot** - The ultimate macOS automation bot! Seamlessly manage terminal scripts, Bluetooth, volume, airplane mode, time zones, and Git operations. Securely controlled by authorized users only, it’s your go-to tool for boosting productivity and automating tasks with precision.
