@@ -1,33 +1,44 @@
-# fridayBOT
-🚀 FridayBot - The ultimate macOS automation bot! Seamlessly manage terminal scripts, Bluetooth, volume, airplane mode, time zones, and Git operations. Securely controlled by authorized users only, it’s your go-to tool for boosting productivity and automating tasks with precision.
-
-Certainly! Below is a well-formatted, eye-catching version of the documentation suitable for a GitHub README.
+Certainly! Below is the updated and enhanced GitHub README-style documentation with a copyright notice at the start, including the mention of the software maker "Areeb Sayyed" in an eye-catching and bold style.
 
 ---
 
-# Telegram Bot for macOS System Automation
+# 🚀 FridayBot
 
-## Overview
+**FridayBot** - The ultimate macOS automation bot! Seamlessly manage terminal scripts, Bluetooth, volume, airplane mode, time zones, and Git operations. Securely controlled by authorized users only, it’s your go-to tool for boosting productivity and automating tasks with precision.
+
+---
+
+## ⚖️ Copyright & Attribution
+
+This software is **© 2024 Areeb Sayyed**. All rights reserved. 
+
+Built with 💻 and ❤️ by **Areeb Sayyed**. 
+
+---
+
+## 🛠️ Telegram Bot for macOS System Automation
+
+### Overview
 
 This Python script automates various system tasks on a macOS machine using a Telegram bot. The bot allows you to:
 
-- Start/stop scripts
-- Manage Bluetooth connections
-- Control system volume
-- Toggle airplane mode
-- Switch between timezones
-- Kill all running applications
-- Push code to specified Git repositories
+- 🎬 Start/stop scripts
+- 📶 Manage Bluetooth connections
+- 🔊 Control system volume
+- ✈️ Toggle airplane mode
+- 🌍 Switch between timezones
+- 💣 Kill all running applications
+- 🛠️ Push code to specified Git repositories
 
-**User authentication** ensures that only authorized users can interact with the bot.
+**🔒 User authentication** ensures that only authorized users can interact with the bot.
 
 ---
 
-## Prerequisites
+## 📋 Prerequisites
 
 Before setting up the script, make sure you have the following installed on your macOS:
 
-### 1. Python 3
+### 1. 🐍 Python 3
 
 macOS typically comes with Python pre-installed. Check the version:
 
@@ -41,15 +52,15 @@ If Python is not installed, you can install it using [Homebrew](https://brew.sh/
 brew install python
 ```
 
-### 2. Telegram Bot API Library
+### 2. 🤖 Telegram Bot API Library
 
 Install the `python-telegram-bot` library to enable bot interaction:
 
 ```bash
-pip3 install python-telegram-bot
+sudo pip3 install python-telegram-bot
 ```
 
-### 3. `blueutil` for Bluetooth Management
+### 3. 🔵 `blueutil` for Bluetooth Management
 
 Install `blueutil` to control Bluetooth from the command line:
 
@@ -57,7 +68,7 @@ Install `blueutil` to control Bluetooth from the command line:
 brew install blueutil
 ```
 
-### 4. macOS Permissions
+### 4. 🔐 macOS Permissions
 
 Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 
@@ -66,7 +77,7 @@ Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 
 ---
 
-## Create a Telegram Bot
+## 🤖 Create a Telegram Bot
 
 ### 1. Create a Telegram Bot
 
@@ -77,7 +88,7 @@ Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 
 ---
 
-## Script Configuration
+## ⚙️ Script Configuration
 
 ### 1. Allowed Usernames
 
@@ -125,23 +136,29 @@ Ensure the timezones mentioned in the script (`America/Toronto` and `Asia/Calcut
 
 ---
 
-## Script Execution
+## 🚀 Script Execution
 
-### 1. Make the Script Executable
+You have two options to run the script:
 
-Make the script executable by running:
+### 1. **Run with Terminal Visibility** (See Live Logs)
 
-```bash
-chmod +x telegram_bot.py
-```
-
-### 2. Run the Script
-
-Start the bot by running the script in the Terminal:
+If you want to see the terminal output live, use:
 
 ```bash
-python3 telegram_bot.py
+sudo python3 telegram_bot.py
 ```
+
+### 2. **Run in Background** (Terminal-Free Execution)
+
+If you want the script to continue running even if the terminal is closed or your Mac is locked, use:
+
+```bash
+sudo nohup python3 telegram_bot.py &
+```
+
+- **`sudo`**: Ensures the script runs with superuser privileges, which are often required for managing system settings like Bluetooth and volume.
+- **`nohup`**: Allows the script to keep running in the background, even after you log out or close the terminal.
+- **`&`**: Puts the script in the background, freeing up your terminal.
 
 ### 3. Allow Necessary Permissions
 
@@ -149,24 +166,24 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 ---
 
-## Interact with the Bot
+## 💬 Interact with the Bot
 
 ### 1. Start the Bot
 
 1. Open Telegram and start a chat with your bot.
 2. Use the `/start` command to see the available options and buttons.
 3. You can now:
-   - Start/stop scripts
-   - Push code to repositories
-   - Toggle Bluetooth
-   - Control system volume
-   - Switch timezones
-   - Kill all running applications
-   - Stop the bot
+   - 🎬 Start/stop scripts
+   - 🛠️ Push code to repositories
+   - 📶 Toggle Bluetooth
+   - 🔊 Control system volume
+   - 🌍 Switch timezones
+   - 💣 Kill all running applications
+   - 🛑 Stop the bot
 
 ---
 
-## Script Functions Overview
+## 🔍 Script Functions Overview
 
 ### Logging Configuration
 
@@ -245,13 +262,15 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 ---
 
-## Automate Script Startup (Optional)
+## 🔄 Automate Script Startup (Optional)
 
 ### 1. Create a LaunchAgent
 
 To run the script automatically on startup, create a LaunchAgent:
 
-1. Create a new `.plist` file in `~/Library/LaunchAgents/` (e.g., `com.username.telegram_bot.plist`):
+1. Create a new `.plist` file in `~/Library/LaunchAgents/` (
+
+e.g., `com.username.telegram_bot.plist`):
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -277,23 +296,21 @@ To run the script automatically on startup, create a LaunchAgent:
 3. Load the agent:
 
    ```bash
-   launchctl load ~/Library/LaunchAgents/com.username.telegram_bot.plist
+   sudo launchctl load ~/Library/LaunchAgents/com.username.telegram_bot.plist
    ```
 
 ---
 
-## Testing and Debugging
+## 🧪 Testing and Debugging
 
 - **Test All Functions:** Ensure all functions such as starting/stopping scripts, Bluetooth toggling, volume control, and Git operations work as expected.
 - **Check Logs:** Review logs in the Terminal to troubleshoot any issues.
 
 ---
 
-## Final Notes
+## 📌 Final Notes
 
-- This script is specifically designed for a macOS environment and leverages macOS
-
--specific tools like AppleScript.
+- This script is specifically designed for a macOS environment and leverages macOS-specific tools like AppleScript.
 - Ensure paths and repository settings are correctly configured according to your system.
 - Regularly update the script if you add more repositories, scripts, or functionalities.
 
@@ -302,5 +319,3 @@ To run the script automatically on startup, create a LaunchAgent:
 Following these steps will ensure that you set up and run the provided Python script on your Mac successfully, with a thorough understanding of each component's functionality.
 
 ---
-
-This documentation is designed to be clear and engaging, making it suitable for a GitHub README file. The headings and code blocks provide a structured guide, making it easy for users to follow along.
