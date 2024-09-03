@@ -8,7 +8,7 @@
 
 This software is **© Areeb Sayyed**. All rights reserved. Unauthorized use or distribution is prohibited. 🛡️
 
-Built with 💻 and ❤️ by **Areeb Sayyed**. 
+Built with 💻 and ❤️ by **Areeb Sayyed**.
 
 ---
 
@@ -100,7 +100,7 @@ Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 Update the `ALLOWED_USERNAMES` list with the usernames allowed to interact with the bot:
 
 ```python
-ALLOWED_USERNAMES = ['YourTelegramBotUsername', 'yourTelegramUsername']  # Add more usernames as needed
+ALLOWED_USERNAMES = ['yourTelegramBotUsername', 'yourTelegramUsername']  # Add more usernames as needed
 ```
 
 ### 2. Repository Configuration
@@ -117,6 +117,7 @@ REPOSITORIES = {
         'path': '/path/to/backend/repo',
         'branch': 'develop',
     },
+    # Add more repositories as needed
 }
 ```
 
@@ -128,16 +129,25 @@ Map your scripts in the `SCRIPT_COMMANDS` dictionary. Specify the paths to the s
 SCRIPT_COMMANDS = {
     'stayawake': '/path/to/stayawake.sh',
     'another': '/path/to/another_script.sh',
+    # Add more scripts as needed
 }
 ```
 
 ### 4. Bluetooth MAC Address
 
-Update the `device_mac_address` variable with the MAC address of the Bluetooth device you want to pair/unpair.
+Update the `device_mac_address` variable with the MAC address of the Bluetooth device you want to pair/unpair:
+
+```python
+device_mac_address = "XX:XX:XX:XX:XX:XX"  # Replace with your Bluetooth device's MAC address
+```
 
 ### 5. Timezone Settings
 
-Ensure the timezones mentioned in the script (`America/Toronto` and `Asia/Calcutta`) are correct. Adjust them if needed.
+Ensure the timezones mentioned in the script (`America/Toronto` and `Asia/Calcutta`) are correct. Adjust them if needed:
+
+```python
+current_timezone = 'America/Toronto'  # Default timezone
+```
 
 ---
 
@@ -210,7 +220,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
 - **Function:** `is_bluetooth_on() -> bool`
   - **Purpose:** Checks if Bluetooth is powered on.
 - **Function:** `toggle_bluetooth_device(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
-  - **Purpose:** Toggles Bluetooth pairing/unpairing with a specified device.
+  - **Purpose:** Toggles Bluetooth pairing/unpairing with the specified device using its MAC address.
 
 ### Script Management
 
@@ -232,7 +242,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
 ### Timezone Switching
 
 - **Function:** `toggle_timezone(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
-  - **Purpose:** Switches between two predefined timezones.
+  - **Purpose:** Switches between two predefined timezones (`America/Toronto` and `Asia/Calcutta`).
 
 ### Kill All Applications
 
@@ -253,7 +263,9 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 ### Screenshot Capture
 
-- **Function:** `capture_screenshot(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
+- **Function:** `capture_screenshot(update: Update, context: Context
+
+Types.DEFAULT_TYPE) -> None`
   - **Purpose:** Captures a screenshot of the current desktop, resizes it to fit within Telegram’s file size limits, and sends it to the user via the bot.
 
 ### Bot Control
@@ -263,9 +275,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 ### Button Callback
 
-- **Function:** `button_callback(update:
-
- Update, context: ContextTypes.DEFAULT_TYPE) -> None`
+- **Function:** `button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
   - **Purpose:** Handles all button interactions, mapping the button's callback data to the appropriate function.
 
 ### Main Function
