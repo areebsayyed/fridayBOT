@@ -4,9 +4,11 @@
 
 ---
 
-## ⚖️ Copyright & Attribution
+## 🛡️ Open-Source & Rights Notice
 
-This software is **© Areeb Sayyed**. All rights reserved. Unauthorized use or distribution is prohibited. 🛡️
+This software is **🌟 open-source 🌟** and welcomes your creative modifications or enhancements! 🎉 Feel free to make it your own, improve it, and share your contributions with the community. However, **🚫 commercial use or selling** of this software is strictly prohibited. 
+
+All rights are reserved to **✨ Areeb Sayyed ©**. 
 
 Built with 💻 and ❤️ by **Areeb Sayyed**.
 
