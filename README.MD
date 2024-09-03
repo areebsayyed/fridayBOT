@@ -4,7 +4,7 @@
 
 ---
 
-## 🛡️ Open-Source & Rights Notice
+## 🛡️ Open-Source & Rights Notice ⚖️
 
 This software is **🌟 open-source 🌟** and welcomes your creative modifications or enhancements! 🎉 Feel free to make it your own, improve it, and share your contributions with the community. However, **🚫 commercial use or selling** of this software is strictly prohibited. 
 
