@@ -6,7 +6,7 @@
 
 ## ⚖️ Copyright & Attribution
 
-This software is **© 2024 Areeb Sayyed**. All rights reserved. 
+This software is **© Areeb Sayyed**. All rights reserved. Unauthorized use or distribution is prohibited. 🛡️
 
 Built with 💻 and ❤️ by **Areeb Sayyed**. 
 
@@ -25,6 +25,7 @@ This Python script automates various system tasks on a macOS machine using a Tel
 - 🌍 Switch between timezones
 - 💣 Kill all running applications
 - 🛠️ Push code to specified Git repositories
+- 📸 Capture and send screenshots
 
 **🔒 User authentication** ensures that only authorized users can interact with the bot.
 
@@ -64,7 +65,15 @@ Install `blueutil` to control Bluetooth from the command line:
 brew install blueutil
 ```
 
-### 4. 🔐 macOS Permissions
+### 4. 📸 `Pillow` for Image Processing
+
+Install the `Pillow` library to handle image resizing:
+
+```bash
+sudo pip3 install pillow
+```
+
+### 5. 🔐 macOS Permissions
 
 Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 
@@ -91,7 +100,7 @@ Ensure that Terminal has **Full Disk Access** and **Automation** permissions:
 Update the `ALLOWED_USERNAMES` list with the usernames allowed to interact with the bot:
 
 ```python
-ALLOWED_USERNAMES = ['MacCobra_Air_Bot', 'harshitshukla_20']  # Add more usernames as needed
+ALLOWED_USERNAMES = ['YourTelegramBotUsername', 'yourTelegramUsername']  # Add more usernames as needed
 ```
 
 ### 2. Repository Configuration
@@ -156,7 +165,7 @@ sudo nohup python3 telegram_bot.py &
 - **`nohup`**: Allows the script to keep running in the background, even after you log out or close the terminal.
 - **`&`**: Puts the script in the background, freeing up your terminal.
 
-### 3. Allow Necessary Permissions
+### 3. 🛡️ Allow Necessary Permissions
 
 The first time the script runs, macOS may ask for permission to control Terminal, Bluetooth, and other system features. Ensure you grant these permissions.
 
@@ -175,6 +184,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
    - 🔊 Control system volume
    - 🌍 Switch timezones
    - 💣 Kill all running applications
+   - 📸 Capture and send screenshots
    - 🛑 Stop the bot
 
 ---
@@ -193,7 +203,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
 ### Start Function
 
 - **Function:** `start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
-- **Purpose:** Displays control buttons to start/stop scripts, toggle Bluetooth, toggle airplane mode, control volume, switch timezones, kill all apps, or push code to repositories.
+- **Purpose:** Displays control buttons to start/stop scripts, toggle Bluetooth, toggle airplane mode, control volume, switch timezones, kill all apps, push code to repositories, capture screenshots, or stop the bot.
 
 ### Bluetooth Management
 
@@ -241,6 +251,11 @@ The first time the script runs, macOS may ask for permission to control Terminal
   - `push_code(update, context: ContextTypes.DEFAULT_TYPE, repo_key: str) -> None`: Handles pushing code to a specified repository with enhanced error handling and notifications.
   - `proceed_with_push(update, branch_name: str, repo_key: str) -> None`: Manages the process of merging the current branch into the target branch and handling conflicts during the Git operations.
 
+### Screenshot Capture
+
+- **Function:** `capture_screenshot(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
+  - **Purpose:** Captures a screenshot of the current desktop, resizes it to fit within Telegram’s file size limits, and sends it to the user via the bot.
+
 ### Bot Control
 
 - **Function:** `stop_bot(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
@@ -248,7 +263,9 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 ### Button Callback
 
-- **Function:** `button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None`
+- **Function:** `button_callback(update:
+
+ Update, context: ContextTypes.DEFAULT_TYPE) -> None`
   - **Purpose:** Handles all button interactions, mapping the button's callback data to the appropriate function.
 
 ### Main Function
@@ -264,9 +281,7 @@ The first time the script runs, macOS may ask for permission to control Terminal
 
 To run the script automatically on startup, create a LaunchAgent:
 
-1. Create a new `.plist` file in `~/Library/LaunchAgents/` (
-
-e.g., `com.username.telegram_bot.plist`):
+1. Create a new `.plist` file in `~/Library/LaunchAgents/` (e.g., `com.username.telegram_bot.plist`):
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -299,7 +314,7 @@ e.g., `com.username.telegram_bot.plist`):
 
 ## 🧪 Testing and Debugging
 
-- **Test All Functions:** Ensure all functions such as starting/stopping scripts, Bluetooth toggling, volume control, and Git operations work as expected.
+- **Test All Functions:** Ensure all functions such as starting/stopping scripts, Bluetooth toggling, volume control, Git operations, and screenshot capturing work as expected.
 - **Check Logs:** Review logs in the Terminal to troubleshoot any issues.
 
 ---
@@ -313,4 +328,3 @@ e.g., `com.username.telegram_bot.plist`):
 ---
 
 Following these steps will ensure that you set up and run the provided Python script on your Mac successfully, with a thorough understanding of each component's functionality.
-
